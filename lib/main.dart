@@ -7,12 +7,11 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  final appTitle = "drawer demo";
+  final appTitle = "NGUIRANE DEV";
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'NGUIRANDE DEV',
       theme: ThemeData(
         primarySwatch: Colors.green
       ),

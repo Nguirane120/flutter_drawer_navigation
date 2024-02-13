@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class HomePage extends StatelessWidget {
   final String title;
@@ -9,8 +10,32 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.settings),
+            tooltip: "Settings",
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.chat),
+            tooltip: "Chat",
+          )
+          
+        ],
+        systemOverlayStyle: SystemUiOverlayStyle.dark,
+        backgroundColor: Colors.red,
+        // centerTitle: true,
+        toolbarHeight: 60.2,
+        toolbarOpacity: 0.8,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(35), //value can be adjusted
+                bottomRight: Radius.circular(35))),
+        // titleSpacing: 0.0,
+        elevation: 0.00,
       ),
-      body: Center(child: Text("drawer navigation")),
+      body: Center(child: Text("Flutter training")),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.all(10),
@@ -41,9 +66,13 @@ class HomePage extends StatelessWidget {
             ListTile(
               title: Text("FAVORITE"),
               leading: Icon(Icons.favorite),
-              onTap: () =>  Navigator.pop(context),
+              onTap: () => Navigator.pop(context),
             ),
-            ListTile(title: Text("LOGOUT"), leading: Icon(Icons.logout), onTap: () => Navigator.pop(context),)
+            ListTile(
+              title: Text("LOGOUT"),
+              leading: Icon(Icons.logout),
+              onTap: () => Navigator.pop(context),
+            )
           ],
         ),
       ),
